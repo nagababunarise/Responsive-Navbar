@@ -1,0 +1,260 @@
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 20px;
+  padding-bottom: 20;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+}
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.navbar li {
+  font-size: 18px;
+  font-weight: 500;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: rgb(51, 45, 45);
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+}
+.navbar h1 {
+  font-size: 20px;
+  border-style: double;
+  border-width: 2px;
+  padding: 5px;
+  border-radius: 100%;
+  margin: 10px;
+  cursor: pointer;
+}
+.navbar button {
+  border-radius: 20px;
+  border: 0;
+  outline: 0;
+  background-color: black;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 12px 25px;
+  display: inline-flex;
+  align-items: center;
+}
+.nav-btn-logo {
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+.header {
+  width: 100%;
+  background: linear-gradient(to bottom, #96efff 0%, #ed9ed6 100%, #7071e8);
+  min-height: 100vh;
+  background-size: cover;
+  padding: 0 10%;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header h1 {
+  margin-top: 100px;
+  font-size: 9vw;
+  line-height: 11vw;
+}
+.btn-container {
+  margin: 20px 0;
+}
+.header button {
+  border: 0;
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.btn-dark {
+  background: #000;
+  color: #fff;
+  border-radius: 40px;
+  padding: 10px 10px 10px 30px;
+}
+.call-image {
+  width: 40px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  margin-left: 20px;
+}
+.light-btn {
+  background: transparent;
+  text-decoration: underline;
+}
+.light-btn img {
+  width: 20px;
+  margin-left: 5px;
+}
+header p {
+  max-width: 360px;
+  font-weight: 600;
+}
+.profile-image {
+  width: 80%;
+  max-width: 500px;
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+}
+@media only screen and (max-width: 900px) {
+  .profile-image {
+    padding-top: 0;
+  }
+}
+
+/*------------------------Header Animation ---------------*/
+
+.header h1 span {
+  background: linear-gradient(#000, #000);
+  background-repeat: no-repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-size: 0%;
+}
+.header h1 span:first-child {
+  animation: textcolor1 2s linear infinite alternate;
+}
+.header h1 span:last-child {
+  animation: textcolor2 2s linear infinite alternate;
+}
+
+@keyframes textcolor1 {
+  0% {
+    background-size: 0%;
+  }
+  40% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+@keyframes textcolor2 {
+  0% {
+    background-size: 0%;
+  }
+  40% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+.menu-image {
+  display: none;
+}
+/*---------------------------@media queries ---------------------*/
+
+@media only screen and (max-width: 900px) {
+  .navbar {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  .navbar ul {
+    position: absolute;
+    width: 100%;
+    background: #000;
+    left: 0;
+    top: 100%;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+  }
+  .navbar button {
+    display: none;
+  }
+  .menu-image {
+    display: block;
+    width: 30px;
+  }
+  .show-menu {
+    max-height: 100px;
+    margin: 10px;
+    font-size: 15px;
+    color: #fff;
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .header {
+    height: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile-image {
+    width: 100%;
+    right: auto;
+    position: relative;
+    margin-top: 100px;
+  }
+  .content-card {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    padding-bottom: 40px;
+    background: linear-gradient(transparent, #fff);
+    opacity: 1;
+    width: 100%;
+  }
+  .btn-container {
+    margin: 5px 0;
+    padding-left: 10px;
+  }
+  .header button {
+    font-size: 14px;
+    margin-right: 10px;
+    padding-left: 20px;
+  }
+  .btn-dark {
+    padding: 7px 7px 7px 20px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+  .call-image {
+    width: 30px;
+    padding: 5px;
+    margin-left: 20px;
+  }
+  .header p {
+    padding-left: 20px;
+  }
+  .header h1 {
+    padding-left: 20px;
+  }
+}
